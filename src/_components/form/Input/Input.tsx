@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import { forwardRef, InputHTMLAttributes } from "react";
-import Image from "next/image";
 
 const inputStyles = {
-  base: "text-[16px] leading-[24px] font-normal p-3 rounded-xl w-full focus:outline-none text-black bg-secondary-lighten-1 border solid border-secondary-lighten-1 focus:border-secondary-darken-1",
+  base: "text-[20px] leading-[28px]  bg-transparent font-normal p-2  w-full focus:outline-none text-black ",
 };
 
 type InputProps = {
@@ -16,7 +15,7 @@ type InputProps = {
   autoFocus?: boolean;
   label?: string;
   error?: string;
-  icon?: string;
+  icon?: React.ReactNode;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -42,15 +41,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <label className={wrapperClasses}>
         {label && <span>{label}</span>}
-        <div className="relative">
-          {icon && (
-            <Image
-              src={icon}
-              alt="input icon"
-              className="absolute w-4 h-4 transform -translate-y-1/2 left-3 top-1/2"
-              style={{ pointerEvents: "none" }}
-            />
-          )}
+        <div className="flex items-center">
+          {icon && icon}
           <input
             autoFocus={autoFocus}
             ref={ref}
@@ -59,9 +51,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             value={value}
             onClick={onClick}
             {...props}
-            style={{
-              paddingLeft: icon ? "30px" : "10px",
-            }}
           />
         </div>
         {error && <span className="text-red-600">{error}</span>}

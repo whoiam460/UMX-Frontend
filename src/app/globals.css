@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    /* --background: #0a0a0a; */
     --foreground: #ededed;
   }
 }
@@ -47,6 +47,66 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.product-slider-container {
+  display: flex;
+  gap: 20px;
+  height: 860px;
+  align-items: flex-start;
+  overflow: hidden; /* Забираємо горизонтальний скрол */
+}
+
+.thumbs-slider {
+  width: 200px;
+  height: 100%;
+  overflow-y: scroll; /* Додаємо вертикальний скрол */
+  scrollbar-width: none; /* Прибираємо скролбар у Firefox */
+}
+
+.thumbs-slider::-webkit-scrollbar {
+  display: none; /* Прибираємо скролбар у WebKit-браузерах (Chrome, Safari) */
+}
+
+.thumbs-slider .swiper-slide {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.thumbs-slider .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.thumbs-slider img {
+  width: 100%;
+  height: auto; /* Динамічна висота, щоб зберігати пропорції зображень */
+}
+
+.swiper {
+  height: 100%;
+}
+
+.thumbs-slider {
+  width: 200px;
+  height: 100%;
+  overflow-y: scroll; /* Включаємо вертикальний скрол */
+  scrollbar-width: none; /* Прибираємо скролбар у Firefox */
+}
+
+.thumbs-slider::-webkit-scrollbar {
+  display: none; /* Прибираємо скролбар у Chrome, Safari */
+}
+
+.main-slider {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  visibility: hidden;
 }
 
 @layer utilities {
