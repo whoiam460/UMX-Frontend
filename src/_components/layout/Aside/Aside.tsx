@@ -7,7 +7,7 @@ const Aside = () => {
   const toggleAside = () => {
     setIsExpanded(!isExpanded);
   };
-
+  // TODO: Change hex color to color config when it will be ready
   return (
     <div className="relative w-20 z-[999] ">
       <div
@@ -21,7 +21,7 @@ const Aside = () => {
 
       {/* Асайд */}
       <div
-        className={`fixed  left-0 h-full bg-[#D9D9D9]  transform transition-all duration-500 ${
+        className={`fixed  left-0 h-full bg-[#002349]  transform transition-all duration-500 ${
           isExpanded ? "translate-x-0 w-[260px]" : "translate-x-0 w-20"
         }`}
       >

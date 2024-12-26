@@ -4,8 +4,14 @@ import clsx from "clsx";
 type TextProps = {
   tag?: ElementType;
   level?: 1 | 2 | 3;
-  variant?: "black" | "white" | "primary" | "secondary" | "accent";
-  weight?: "medium" | "bold";
+  variant?:
+    | "black"
+    | "white"
+    | "primary"
+    | "secondary"
+    | "accent"
+    | "currentColor";
+  weight?: "normal" | "medium" | "bold";
   children: ReactNode;
   className?: string;
   onClick?: MouseEventHandler;
@@ -24,9 +30,11 @@ const styles = {
     primary: "text-primary",
     secondary: "text-secondary",
     accent: "text-accent",
+    currentColor: "text-current",
   },
 
   weight: {
+    normal: "text-normal",
     medium: "font-medium",
     bold: "font-bold",
   },

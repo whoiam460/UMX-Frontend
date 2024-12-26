@@ -10,6 +10,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -18,6 +19,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -26,6 +28,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "вживаний",
   },
   {
     title: "Назва продукта",
@@ -34,6 +37,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -42,6 +46,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "вживаний",
   },
   {
     title: "Назва продукта",
@@ -50,6 +55,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "вживаний",
   },
   {
     title: "Назва продукта",
@@ -58,6 +64,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "вживаний",
   },
   {
     title: "Назва продукта",
@@ -66,6 +73,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -74,6 +82,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -82,6 +91,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -90,6 +100,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "новий",
   },
   {
     title: "Назва продукта",
@@ -98,6 +109,7 @@ const productItems = [
     price: 200,
     location: "Хмельницький",
     date: "21.12.2024",
+    condition: "вживаний",
   },
 ];
 const PopularProductBlock = () => {

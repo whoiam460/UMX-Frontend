@@ -6,29 +6,43 @@ type TagProps = {
   text?: string;
   className?: string;
   variant?: "sm" | "md";
+  type?: "primary" | "secondary";
 };
 
 const styles = {
-  paddings: {
-    sm: "px-2 py-1",
-    md: "px-8 py-3",
+  size: {
+    sm: "px-2 py-1 rounded",
+    md: "px-8 py-3 rounded-lg",
   },
   textSize: {
-    sm: 3 as 3,
-    md: 1 as 1,
+    sm: 3 as const,
+    md: 1 as const,
+  },
+  colors: {
+    primary: "bg-[#002349] text-white",
+    secondary: "bg-[#E4E5EA] text-black",
   },
 };
 
-const Tag: React.FC<TagProps> = ({ text, className, variant = "md" }) => {
+// TODO: Change hex color to color config when it will be ready
+const Tag: React.FC<TagProps> = ({
+  text,
+  className,
+  variant = "md",
+  type = "primary",
+}) => {
   const wrapperStyles = clsx(
-    "rounded-lg bg-[#D9D9D9]  w-fit",
-    styles.paddings[variant],
+    " flex items-center w-fit",
+    styles.colors[type],
+    styles.size[variant],
     className
   );
 
   return (
     <div className={wrapperStyles}>
-      <Text level={styles.textSize[variant]}>{text}</Text>
+      <Text variant="currentColor" level={styles.textSize[variant]}>
+        {text}
+      </Text>
     </div>
   );
 };

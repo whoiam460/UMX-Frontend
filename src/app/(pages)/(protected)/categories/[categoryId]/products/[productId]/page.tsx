@@ -1,4 +1,4 @@
-import { Container, Text, Title } from "@/_components";
+import { Container, Text, Title, Search, Breadcrumbs } from "@/_components";
 import { ProductSlider } from "@/_modules/Products/components";
 
 const images = [
@@ -12,7 +12,8 @@ const images = [
 const ProductPage = () => {
   return (
     <Container>
-      <Text>breadcrampsa</Text>
+      <Search className="mb-11" />
+      <Breadcrumbs className="mb-7" />
       <div className="flex">
         <ProductSlider className="w-8/12 mr-5" images={images} />
         <div>
