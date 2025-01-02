@@ -30,7 +30,7 @@ const variants = {
   },
 
   primary: {
-    filled: "bg-[#002349] hover:bg-accent-lighten-1 active:bg-accent-darken-1",
+    filled: "bg-primary hover:bg-accent-lighten-1 active:bg-accent-darken-1",
   },
 
   ghost: { filled: "bg-transparent" },
