@@ -6,7 +6,7 @@ type ButtonProps = {
   children?: React.ReactNode;
   size?: "default" | "md" | "sm";
   shape?: "default" | "circle";
-  variant?: "accent" | "ghost" | "disabled" | "primary";
+  variant?: "accent" | "primary";
   format?: "filled";
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -14,36 +14,37 @@ type ButtonProps = {
   disabled?: boolean;
   isLoading?: boolean;
   type?: "button" | "submit" | "reset";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const styles = {
   base: "text-black flex items-center justify-center transition-all duration-300",
   shapes: {
-    default: "rounded-[8px]",
+    default: "rounded-lg",
     circle: "rounded-full",
   },
 };
 
 const variants = {
-  accent: {
-    filled: "bg-accent hover:bg-accent-lighten-1 active:bg-accent-darken-1",
-  },
-
   primary: {
-    filled: "bg-primary hover:bg-accent-lighten-1 active:bg-accent-darken-1",
+    filled:
+      "bg-primary text-white hover:bg-primary-darken-1 hover:text-neutral-darken-1 active:bg-primary-darken-2 active:text-neutral-darken-2 focus:bg-primary-lighten-1 focus:text-neutral-lighten-1",
   },
-
-  ghost: { filled: "bg-transparent" },
-
-  disabled: {
-    filled: "!bg-gray !text-black",
+  accent: {
+    filled:
+      "bg-accent text-dark hover:bg-accent-lighten-2 hover:text-dark-darken-1 active:bg-accent-darken-1 active:text-dark-darken-2 focus:bg-accent-lighten-1 focus:text-dark-lighten-1",
   },
 };
 
 const sizes = {
-  default: "px-5 py-2.5",
-  md: "px-5 py-5",
-  sm: "p-[14px]",
+  default: "py-4 px-6",
+  md: "py-3 px-8",
+  sm: "py-2 px-11",
+  xs: "py-2 px-6",
+};
+
+const disabledStyles = {
+  primary: "cursor-not-allowed bg-primary-lighten-3 text-neutral-darken-3",
+  accent: "cursor-not-allowed bg-accent-lighten-4 text-dark-lighten-3",
 };
 
 const Spinner: React.FC = () => (
@@ -53,7 +54,7 @@ const Spinner: React.FC = () => (
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   {
     children,
-    size = "md",
+    size = "default",
     shape = "default",
     variant = "primary",
     format = "filled",
@@ -67,13 +68,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   },
   ref
 ) {
-  const isDisabled = disabled || isLoading;
+  const isButtonDisabled = disabled || disabled || isLoading;
   const classes = clsx(
     styles.base,
     styles.shapes[shape],
     sizes[size],
-    isDisabled ? variants.disabled.filled : variants[variant][format],
-    !!isDisabled && "cursor-not-allowed",
+    !isButtonDisabled ? variants[variant][format] : disabledStyles[variant],
     !!block && "w-full",
     className
   );
@@ -83,7 +83,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       className={classes}
       onClick={onClick}
       type={type}
-      disabled={isDisabled}
+      disabled={isButtonDisabled}
       {...rest}
       ref={ref}
     >
