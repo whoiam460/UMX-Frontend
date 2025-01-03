@@ -4,14 +4,8 @@ import clsx from "clsx";
 type TextProps = {
   tag?: ElementType;
   level?: 1 | 2 | 3;
-  variant?:
-    | "black"
-    | "white"
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "currentColor";
-  weight?: "normal" | "medium" | "bold";
+  variant?: "black" | "white" | "primary" | "accent" | "currentColor";
+  weight?: "bold" | "semiBold" | "medium" | "normal" | "light";
   children: ReactNode;
   className?: string;
   onClick?: MouseEventHandler;
@@ -19,24 +13,27 @@ type TextProps = {
 
 const styles = {
   levels: {
-    1: "text-[16px] leading-[20px]",
-    2: "text-[14px] leading-[18px]",
-    3: "text-[8px] text-[12px] sm:text-[12px] sm:leading-[16px]",
+    1: "text-[20px] leading-7",
+    2: "text-[18px] leading-6",
+    3: "text-[16px] leading-6",
+    4: "text-[14px] leading-5",
+    5: "text-[12px] leading-4",
   },
 
   variants: {
     white: "text-white",
     black: "text-black",
     primary: "text-primary",
-    secondary: "text-secondary",
     accent: "text-accent",
     currentColor: "text-current",
   },
 
   weight: {
-    normal: "text-normal",
-    medium: "font-medium",
     bold: "font-bold",
+    semiBold: "font-semibold",
+    medium: "font-medium",
+    normal: "font-normal",
+    light: "font-light",
   },
 };
 
@@ -50,7 +47,7 @@ const Text: React.FC<TextProps> = ({
   onClick,
 }) => {
   const classes = clsx(
-    "font-Gilroy inline-block",
+    "inline-block",
     styles.levels[level],
     styles.variants[variant],
     styles.weight[weight],
