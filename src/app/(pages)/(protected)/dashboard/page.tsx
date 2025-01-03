@@ -18,7 +18,7 @@ const Dashboard = () => {
         <PopularProductBlock />
         <PopularSearchBlock />
       </Container>
-      <div className="h-[180px] w-full bg-white">
+      <div className="h-[180px] py-7 w-full bg-white">
         <Container>
           <Text>sdfdsfds</Text>
         </Container>
