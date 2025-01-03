@@ -3,26 +3,32 @@ import clsx from "clsx";
 
 type TitleProps = {
   level?: 1 | 2 | 3 | 4;
-  variant?: "black" | "white";
-  weight?: "bold" | "semiBold";
+  variant?: "black" | "white" | "currentColor" | "primary" | "accent";
+  weight?: "bold" | "semiBold" | "medium" | "normal" | "light";
   children: React.ReactNode;
   className?: string;
 };
 
 const styles = {
   levels: {
-    1: "text-[44px]",
-    2: "text-[28px]",
-    3: "text-[24px]",
-    4: "text-[18px]",
+    1: "text-[48px] leading-[4rem]",
+    2: "text-[40px] leading-[3.25rem]",
+    3: "text-[32px] leading-[2.75rem]",
+    4: "text-[24px] leading-8",
   },
   variants: {
     black: "text-black",
     white: "text-white",
+    currentColor: "text-current",
+    primary: "text-primary",
+    accent: "text-accent",
   },
   weights: {
     bold: "font-bold",
     semiBold: "font-semibold",
+    medium: "font-medium",
+    normal: "font-normal",
+    light: "font-light",
   },
 };
 
@@ -36,7 +42,7 @@ const Title: React.FC<TitleProps> = ({
   const TitleTag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const classes = clsx(
-    "font-Gilroy leading-none",
+    "leading-none",
     styles.levels[level],
     styles.variants[variant],
     styles.weights[weight],
