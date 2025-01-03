@@ -1,78 +1,79 @@
 import { Title, List } from "@/_components";
-
 import { CategoryCard } from "@/_modules/Categories/components";
+import accessoriesAndJewelry from "@/_assets/popularCategory/accessoriesAndJewelry.svg";
+import babyProducts from "@/_assets/popularCategory/babyProducts.svg";
+import beautyAndHealth from "@/_assets/popularCategory/beautyAndHealth.svg";
+import car from "@/_assets/popularCategory/car.svg";
+import clothing from "@/_assets/popularCategory/clothing.svg";
+import electronics from "@/_assets/popularCategory/electronics.svg";
+import giftsAndHobbies from "@/_assets/popularCategory/giftsAndHobbies.svg";
+import home from "@/_assets/popularCategory/home.svg";
+import petSupplies from "@/_assets/popularCategory/petSupplies.svg";
+import realEstate from "@/_assets/popularCategory/realEstate.svg";
+import spareParts from "@/_assets/popularCategory/spareParts.svg";
+import sports from "@/_assets/popularCategory/sports.svg";
 
 const categoryItems = [
   {
-    text: "Хоббі і спорт",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
-  },
-  {
     text: "Електроніка",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    imgUrl: electronics,
   },
   {
-    text: "Хоббі і спорт",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Дім і сад",
+    imgUrl: home,
   },
   {
-    text: "Електроніка",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Нерухомість",
+    imgUrl: realEstate,
   },
   {
-    text: "Дитячі товари ",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Одяг і взуття",
+    imgUrl: clothing,
+  },
+  {
+    text: "Авто",
+    imgUrl: car,
   },
 
   {
-    text: "Хоббі і спорт",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Дитячі Товари",
+    imgUrl: babyProducts,
   },
   {
-    text: "Електроніка",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Краса та здоров'я",
+    imgUrl: beautyAndHealth,
   },
   {
-    text: "Дитячі товари ",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Подарунки та хобі",
+    imgUrl: giftsAndHobbies,
   },
   {
-    text: "Авто",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Аксесуари та прикраси",
+    imgUrl: accessoriesAndJewelry,
   },
   {
-    text: "Електроніка",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Спорт та відпочинок",
+    imgUrl: sports,
   },
   {
-    text: "Дитячі товари ",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Запчастини",
+    imgUrl: spareParts,
   },
   {
-    text: "Авто",
-    imgUrl:
-      "https://zdnemnarodzhennja.com/wp-content/uploads/2024/08/pryvitannya-z-dnem-narodzhennya-svoyimy-slovamy.jpg",
+    text: "Зоотовари",
+    imgUrl: petSupplies,
   },
 ];
 
 const PopularCategoryBlock = () => {
   return (
     <>
-      <Title className="mb-5">Популярні категорії</Title>
+      <Title level={3} className="mb-6">
+        Популярні категорії
+      </Title>
       <List
         items={categoryItems}
-        className="gap-6 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-20"
+        className="gap-5 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-20"
       >
         <CategoryCard />
       </List>

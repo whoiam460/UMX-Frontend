@@ -15,7 +15,7 @@ const List = <
     _id?: string;
     imgUrl?: string;
     text?: string;
-    title: string;
+    title?: string;
     onClick?: void;
   }
 >({

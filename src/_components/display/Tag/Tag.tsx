@@ -15,8 +15,8 @@ const styles = {
     md: "px-8 py-3 rounded-lg",
   },
   textSize: {
-    sm: 3 as const,
-    md: 1 as const,
+    sm: 5 as const,
+    md: 3 as const,
   },
   colors: {
     primary: "bg-[#002349] text-white",

@@ -96,7 +96,9 @@ const items = [
 const PopularSearchBlock = () => {
   return (
     <div className="mb-20">
-      <Title className="mb-5">Популярні пошуки</Title>
+      <Title level={3} className="mb-6">
+        Популярні пошуки
+      </Title>
       <List className="!flex flex-wrap gap-2" items={items}>
         <Tag />
       </List>
