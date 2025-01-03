@@ -1,5 +1,5 @@
 import { ProductCard } from "@/_modules/Products/components";
-import { Title, List, Button } from "@/_components";
+import { Title, List, Button, Text } from "@/_components";
 import { useRouter } from "next/navigation";
 
 const productItems = [
@@ -125,12 +125,19 @@ const PopularProductBlock = () => {
       </Title>
       <List
         onClick={onNavigateToProduct}
-        className="gap-5 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-5"
+        className="gap-5 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-7"
         items={productItems}
       >
         <ProductCard />
       </List>
-      <Button className="mx-auto">Показати ще</Button>
+      <Text
+        level={1}
+        weight="normal"
+        variant="primary"
+        className="w-full block text-center cursor-pointer hover:text-primary-darken-2 "
+      >
+        Показати ще
+      </Text>
     </div>
   );
 };
