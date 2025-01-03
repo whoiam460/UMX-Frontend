@@ -7,7 +7,7 @@ const Footer = () => {
         <Container>asdaa</Container>
       </div>
       <div className="bg-accent">
-        <Container className="w-full flex justify-between py-[6px]">
+        <Container className="w-full flex justify-between items-center h-full py-[6px]">
           <Title level={3}>Наскільки зручно на UMX?</Title>
           <Button>Поділитися</Button>
         </Container>
