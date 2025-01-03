@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { MainLayout } from "@/_components";
-import { Header, Aside } from "@/_components";
+import { Header, Aside, Footer } from "@/_components";
 
 type LayoutProps = {
   children: ReactNode;
@@ -10,7 +10,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <MainLayout header={<Header />} aside={<Aside />}>
+    <MainLayout footer={<Footer />} header={<Header />} aside={<Aside />}>
       {children}
     </MainLayout>
   );

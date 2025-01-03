@@ -6,9 +6,10 @@ type MainLayoutProps = {
   children: ReactNode;
   aside: ReactNode;
   header: ReactNode;
+  footer: ReactNode;
 };
 // TODO: Change hex color to color config when it will be ready
-const MainLayout = ({ header, aside, children }: MainLayoutProps) => {
+const MainLayout = ({ header, aside, children, footer }: MainLayoutProps) => {
   return (
     <div className="h-screen w-full">
       {/* <header className="sticky pl-[5rem] top-0 z-[999999] bg-[#D9D9D9]">
@@ -27,9 +28,7 @@ const MainLayout = ({ header, aside, children }: MainLayoutProps) => {
             {children}
           </main>
 
-          <footer className="bg-[#002349]">
-            <div className="min-h-[285px]">footer</div>
-          </footer>
+          {footer}
         </div>
       </div>
     </div>

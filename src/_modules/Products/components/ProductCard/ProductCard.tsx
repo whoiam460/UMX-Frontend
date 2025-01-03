@@ -25,11 +25,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div
       onClick={onClick}
-      className="rounded-lg relative pt-3 pb-6 max-w-[250px] px-4 cursor-pointer bg-white"
+      className="rounded-lg relative py-3 px-4 cursor-pointer bg-white"
     >
       <div className="w-full flex justify-between  absolute inset-x-0 top-[22px] px-7">
         <Tag type="secondary" variant="sm" text={condition} />
-        <FaRegHeart className="fill-[#E4E5EA] text-[30px] ml-auto" />
+        <FaRegHeart className="fill-neutral text-[30px] ml-auto" />
       </div>
 
       {imgUrl && (
@@ -43,12 +43,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
       )}
 
-      {/* Todo remove text-base, text-sm when typography will be ready and paste level props */}
-      <Title className="mb-1 text-base">{title}</Title>
-      <Title className="mb-6 text-sm">{price}</Title>
+      <Text level={1} variant="primary" className="mb-1 !block">
+        {title}
+      </Text>
+      <Text variant="primary" level={3} className="mb-6 ">
+        {price} грн
+      </Text>
 
-      <Text className="!block">{location}</Text>
-      <Text>{date}</Text>
+      <Text weight="normal" level={5} className="!block">
+        {location}
+      </Text>
+      <Text weight="normal" level={5}>
+        {date}
+      </Text>
     </div>
   );
 };

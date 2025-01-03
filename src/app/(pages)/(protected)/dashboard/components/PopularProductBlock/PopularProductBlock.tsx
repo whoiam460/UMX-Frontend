@@ -120,10 +120,12 @@ const PopularProductBlock = () => {
 
   return (
     <div className="mb-[60px]">
-      <Title className="mb-5">Популярні продукти</Title>
+      <Title level={3} className="mb-6">
+        Популярні продукти
+      </Title>
       <List
         onClick={onNavigateToProduct}
-        className="gap-6 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-5"
+        className="gap-5 gird-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 mb-5"
         items={productItems}
       >
         <ProductCard />

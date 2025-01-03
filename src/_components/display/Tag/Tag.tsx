@@ -18,9 +18,13 @@ const styles = {
     sm: 5 as const,
     md: 3 as const,
   },
+  fontWeight: {
+    sm: "medium" as const,
+    md: "bold" as const,
+  },
   colors: {
-    primary: "bg-[#002349] text-white",
-    secondary: "bg-[#E4E5EA] text-black",
+    primary: "bg-primary text-white",
+    secondary: "bg-neutral text-black",
   },
 };
 
@@ -40,7 +44,11 @@ const Tag: React.FC<TagProps> = ({
 
   return (
     <div className={wrapperStyles}>
-      <Text variant="currentColor" level={styles.textSize[variant]}>
+      <Text
+        variant="currentColor"
+        weight={styles.fontWeight[variant]}
+        level={styles.textSize[variant]}
+      >
         {text}
       </Text>
     </div>
