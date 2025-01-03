@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 type TextProps = {
   tag?: ElementType;
-  level?: 1 | 2 | 3;
+  level?: 1 | 2 | 3 | 4 | 5;
   variant?: "black" | "white" | "primary" | "accent" | "currentColor";
   weight?: "bold" | "semiBold" | "medium" | "normal" | "light";
   children: ReactNode;
@@ -41,7 +41,7 @@ const Text: React.FC<TextProps> = ({
   tag: HTMLTag = "span",
   level = 2,
   variant = "black",
-  weight = "medium",
+  weight = "bold",
   children,
   className = "",
   onClick,
